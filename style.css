@@ -1,0 +1,149 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+:root {
+  --Red: hsl(0, 100%, 74%);
+  --Green: hsl(154, 59%, 51%);
+
+  --Blue: hsl(248, 32%, 49%);
+
+  --Dark-Blue: hsl(249, 10%, 26%);
+  --Grayish-Blue: hsl(246, 25%, 77%);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--Red) url("./images/bg-intro-desktop.png");
+  font-family: "Poppins", sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1000px;
+  margin: auto;
+  padding: 50px 0;
+  color: white;
+}
+
+#cta {
+  display: flex;
+  gap: 50px;
+  align-items: center;
+}
+
+#cta div {
+  flex: 1;
+}
+
+#about h1 {
+  font-size: 48px;
+  line-height: 1;
+  margin-bottom: 25px;
+}
+
+#about p {
+  font-size: 15px;
+}
+
+button {
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  padding: 15px 30px;
+  margin-bottom: 20px;
+  background-color: var(--Blue);
+}
+
+#form {
+  border-radius: 10px;
+  background-color: white;
+  padding: 30px;
+}
+
+#form fieldset {
+  border: none;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+#form input {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  border-radius: 5px;
+  border: 2px solid var(--Grayish-Blue);
+}
+
+#form input.error {
+  border: 2px solid var(--Red);
+  color: red;
+}
+
+img.err {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  visibility: hidden;
+}
+
+input.error ~ img.err {
+  visibility: visible;
+}
+
+.err-msg {
+  font-style: italic;
+  align-self: flex-end;
+  float: right;
+  visibility: hidden;
+  font-size: 11px;
+  margin-top: 5px;
+  color: var(--Red);
+  font-weight: 500;
+}
+
+input.error ~ .err-msg {
+  visibility: visible;
+}
+
+#submit-btn {
+  background-color: var(--Green);
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+#terms {
+  color: var(--Grayish-Blue);
+  text-align: center;
+  font-size: 10px;
+}
+
+#terms span {
+  color: var(--Red);
+  font-weight: 700;
+}
+
+@media screen and (min-width: 375px) and (max-width: 1439px) {
+  body {
+    background: var(--Red) url("./images/bg-intro-mobile.png");
+    width: calc(375px - 50px);
+    min-height: 100vh;
+    height: auto;
+    text-align: center;
+  }
+
+  #cta {
+    flex-direction: column;
+  }
+
+  #about h1 {
+    font-size: 28px;
+    line-height: 1.25;
+    margin-bottom: 15px;
+  }
+}
